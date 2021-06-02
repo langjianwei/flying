@@ -1,6 +1,7 @@
 package com.ljw.flying.downloader;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.util.Map;
 
@@ -11,6 +12,7 @@ import java.util.Map;
  * @Version: 1.0.0
  */
 @Data
+@Accessors(chain = true)
 public class Request {
 
     private String url;
