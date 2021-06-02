@@ -33,4 +33,8 @@ public interface Downloader {
      * @return
      */
     String down(String url, Map<String, Object> params, Map<String, Object> headers);
+
+    public static void main(String[] args) {
+
+    }
 }
