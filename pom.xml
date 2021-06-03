@@ -44,6 +44,13 @@
             <artifactId>guava</artifactId>
             <version>30.0-jre</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/cpdetector/cpdetector -->
+        <dependency>
+            <groupId>cpdetector</groupId>
+            <artifactId>cpdetector</artifactId>
+            <version>1.0.10</version>
+        </dependency>
     </dependencies>
 
     <build>

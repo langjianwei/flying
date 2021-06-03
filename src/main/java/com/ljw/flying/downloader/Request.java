@@ -1,6 +1,8 @@
 package com.ljw.flying.downloader;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.util.Map;
@@ -12,11 +14,27 @@ import java.util.Map;
  * @Version: 1.0.0
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Accessors(chain = true)
 public class Request {
 
     private String url;
-    private Map<String, String> headers;
+    private String method;
     private Map<String, Object> params;
+    private Map<String, Object> headers;
     private Long timeout;
+    private Proxy proxy;
+
+    public static Request custom() {
+        return new Request();
+    }
+
+
+    /**
+     * 请求方法类型
+     */
+    enum Method {
+        GET, POST
+    }
 }
