@@ -240,9 +240,10 @@ public class HC5AsyncDownImpl implements Downloader, Closeable {
         if (null == basicHttpRequest) {
             return;
         }
-        if (!headers.isEmpty()) {
-            headers.forEach(basicHttpRequest::setHeader);
+        if (null == headers) {
+            return;
         }
+        headers.forEach(basicHttpRequest::setHeader);
     }
 
     /**
@@ -251,7 +252,7 @@ public class HC5AsyncDownImpl implements Downloader, Closeable {
      * @return
      */
     private List<NameValuePair> buildParams(Map<String, Object> params) {
-        if (params.isEmpty()) {
+        if (null == params) {
             return null;
         }
         List<NameValuePair> nameValuePairs = new ArrayList<>();
