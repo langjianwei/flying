@@ -1,4 +1,4 @@
-package com.ljw.flying.downloader;
+package com.ljw.flying.fetch;
 
 import com.ljw.flying.utils.net.AllCertsTrustManager;
 import org.apache.hc.client5.http.async.methods.SimpleHttpRequest;
@@ -43,7 +43,7 @@ import java.util.function.Consumer;
  * @DateTime: 2021/6/1 18:51
  * @Version: 1.0.0
  */
-public class HC5AsyncDownImpl implements Downloader, Closeable {
+public class HC5AsyncFetchImpl implements Fetch, Closeable {
 
     private final CloseableHttpAsyncClient client;
     private final Charset charset;
@@ -53,7 +53,7 @@ public class HC5AsyncDownImpl implements Downloader, Closeable {
      *
      * @param timeout，默认毫秒
      */
-    public HC5AsyncDownImpl(long timeout) {
+    public HC5AsyncFetchImpl(long timeout) {
         this(timeout, StandardCharsets.UTF_8);
     }
 
@@ -62,7 +62,7 @@ public class HC5AsyncDownImpl implements Downloader, Closeable {
      * @param timeout，默认毫秒
      * @param charset，默认utf-8
      */
-    public HC5AsyncDownImpl(long timeout, Charset charset) {
+    public HC5AsyncFetchImpl(long timeout, Charset charset) {
         this(initClient(timeout, true), timeout, charset);
     }
 
@@ -72,7 +72,7 @@ public class HC5AsyncDownImpl implements Downloader, Closeable {
      * @param timeout，默认毫秒
      * @param charset，默认utf-8
      */
-    public HC5AsyncDownImpl(CloseableHttpAsyncClient client, long timeout, Charset charset) {
+    public HC5AsyncFetchImpl(CloseableHttpAsyncClient client, long timeout, Charset charset) {
         if(charset == null) {
             throw new IllegalArgumentException("charset is null");
         }

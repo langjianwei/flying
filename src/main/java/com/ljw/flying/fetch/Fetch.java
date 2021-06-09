@@ -1,6 +1,4 @@
-package com.ljw.flying.downloader;
-
-import org.yaml.snakeyaml.scanner.Constant;
+package com.ljw.flying.fetch;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -17,7 +15,7 @@ import java.util.zip.GZIPInputStream;
  * @DateTime: 2021/6/1 17:51
  * @Version: 1.0.0
  */
-public interface Downloader {
+public interface Fetch {
 
     /**
      * 请求

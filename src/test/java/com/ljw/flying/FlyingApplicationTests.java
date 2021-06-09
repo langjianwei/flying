@@ -1,6 +1,6 @@
 package com.ljw.flying;
 
-import com.ljw.flying.downloader.HC5AsyncDownImpl;
+import com.ljw.flying.fetch.HC5AsyncFetchImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,13 +14,13 @@ class FlyingApplicationTests {
 
     @Test
     public void testHC5Get() {
-        HC5AsyncDownImpl async = new HC5AsyncDownImpl(10000, Charset.defaultCharset());
+        HC5AsyncFetchImpl async = new HC5AsyncFetchImpl(10000, Charset.defaultCharset());
         String html = async.down("http://idea.94goo.com/key");
         System.out.println(html);
     }
     @Test
     public void testHC5Post() {
-        HC5AsyncDownImpl async = new HC5AsyncDownImpl(10000, Charset.defaultCharset());
+        HC5AsyncFetchImpl async = new HC5AsyncFetchImpl(10000, Charset.defaultCharset());
         Map<String ,Object> params = new HashMap<>();
         params.put("doctitle","习声回响");
         params.put("page","2");
