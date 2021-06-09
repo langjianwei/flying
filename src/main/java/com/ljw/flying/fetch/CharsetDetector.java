@@ -1,5 +1,5 @@
 
-package com.ljw.flying.downloader;
+package com.ljw.flying.fetch;
 
 
 import com.ljw.flying.utils.detect.EncodingDetector;

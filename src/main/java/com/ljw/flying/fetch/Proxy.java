@@ -1,4 +1,4 @@
-package com.ljw.flying.downloader;
+package com.ljw.flying.fetch;
 
 import lombok.Data;
 
