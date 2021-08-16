@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class Proxy {
 
-    private String ip;
+    private String address;
     private int port;
 
 }

@@ -227,7 +227,7 @@ public class HC5AsyncFetchImpl implements Fetch, Closeable {
 
     private void setProxy(SimpleHttpRequest simpleHttpRequest, RequestConfig.Builder builder, Proxy proxy) {
         if (null != proxy) {
-            builder.setProxy(new HttpHost(proxy.getIp(), proxy.getPort()));
+            builder.setProxy(new HttpHost(proxy.getAddress(), proxy.getPort()));
         }
     }
 
