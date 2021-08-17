@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: server-center
+  security:
+    user:
+      name: eureka
+      password: 123456
+
+server:
+  port: 8701
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/
+    #默认为true，设置为false，仅作为服务中心，不作为服务客户端
+    register-with-eureka: false
+    #默认为true，设置为false， 不从服务中心检索注册的服务
+    fetch-registry: false
+  server:
+    #清理间隔（单位毫秒， 默认是60*1000）
+    eviction-interval-timer-in-ms: 5000
+    #默认为true，设置为false，关闭自我保护
+    enable-self-preservation: true
+    #eureka server： 在运行期间会去统计心跳失败比例在15分钟之内是否低于85%，默认0.85
+    renewal-percent-threshold: 0.49
