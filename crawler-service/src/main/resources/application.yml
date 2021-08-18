@@ -1,1 +1,12 @@
+server:
+  port: 8703
 
+spring:
+  application:
+    name: crawler-service
+
+eureka:
+  client:
+    service-url:
+      # 切记添加server端security的用户名和密码
+      defaultZone: http://eureka:123456@localhost:8701/eureka/
