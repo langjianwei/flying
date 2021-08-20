@@ -27,6 +27,8 @@
     <modules>
         <module>server-center</module>
         <module>crawler-service</module>
+        <module>job-service</module>
+        <module>common-service</module>
     </modules>
 
     <dependencies>
