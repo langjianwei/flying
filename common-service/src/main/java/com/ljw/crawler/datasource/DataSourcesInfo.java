@@ -6,7 +6,7 @@ package com.ljw.crawler.datasource;
  * @Description: 自定义数据源bean，用于映射配置文件数据源信息
  * @Date: Created in 2020/9/9 13:53
  */
-public class CustomDataSource {
+public class DataSourcesInfo {
 
     private String dataSourceName;
     private Boolean enable;
@@ -19,7 +19,7 @@ public class CustomDataSource {
         return dataSourceName;
     }
 
-    public CustomDataSource setDataSourceName(String dataSourceName) {
+    public DataSourcesInfo setDataSourceName(String dataSourceName) {
         this.dataSourceName = dataSourceName;
         return this;
     }
@@ -28,7 +28,7 @@ public class CustomDataSource {
         return enable;
     }
 
-    public CustomDataSource setEnable(Boolean enable) {
+    public DataSourcesInfo setEnable(Boolean enable) {
         this.enable = enable;
         return this;
     }
@@ -37,7 +37,7 @@ public class CustomDataSource {
         return driverClassName;
     }
 
-    public CustomDataSource setDriverClassName(String driverClassName) {
+    public DataSourcesInfo setDriverClassName(String driverClassName) {
         this.driverClassName = driverClassName;
         return this;
     }
@@ -46,7 +46,7 @@ public class CustomDataSource {
         return url;
     }
 
-    public CustomDataSource setUrl(String url) {
+    public DataSourcesInfo setUrl(String url) {
         this.url = url;
         return this;
     }
@@ -55,7 +55,7 @@ public class CustomDataSource {
         return username;
     }
 
-    public CustomDataSource setUsername(String username) {
+    public DataSourcesInfo setUsername(String username) {
         this.username = username;
         return this;
     }
@@ -64,7 +64,7 @@ public class CustomDataSource {
         return password;
     }
 
-    public CustomDataSource setPassword(String password) {
+    public DataSourcesInfo setPassword(String password) {
         this.password = password;
         return this;
     }

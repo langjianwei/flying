@@ -1,10 +1,29 @@
-
 spring:
   application:
     name: job-service
 
 server:
   port: 8702
+
+
+
+### 数据源信息相关配置，多数据源支持，直接在最下面添加即可
+datasources:
+  default-db: db-wyn
+  list:
+    - dataSourceName: db-wyn
+      enable: true
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://192.168.3.52:5432/hotel_v3_prd_wyn_test
+      username: postgres
+      password: dev@yjxd.com_euci
+    - dataSourceName: db-bgy
+      enable: true
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://192.168.3.52:5432/hotel_v3_prd_bgy_test
+      username: postgres
+      password: dev@yjxd.com_euci
+
 
 eureka:
   client:
@@ -15,3 +34,4 @@ eureka:
     instance-id: ${spring.application.name}${server.port}
     # 显示服务IP地址
     prefer-ip-address: true
+debug: true

@@ -13,25 +13,25 @@ import java.util.List;
  */
 @Component
 @ConfigurationProperties(prefix = "datasources")
-public class DataSourceInfo {
+public class DataSourcesProperties {
 
     private String defaultDb;
-    private List<CustomDataSource> list = new ArrayList<>();
+    private List<DataSourcesInfo> list = new ArrayList<>();
 
     public String getDefaultDb() {
         return defaultDb;
     }
 
-    public DataSourceInfo setDefaultDb(String defaultDb) {
+    public DataSourcesProperties setDefaultDb(String defaultDb) {
         this.defaultDb = defaultDb;
         return this;
     }
 
-    public List<CustomDataSource> getList() {
+    public List<DataSourcesInfo> getList() {
         return list;
     }
 
-    public DataSourceInfo setList(List<CustomDataSource> list) {
+    public DataSourcesProperties setList(List<DataSourcesInfo> list) {
         this.list = list;
         return this;
     }

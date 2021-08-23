@@ -17,11 +17,11 @@ import java.util.Objects;
 @Aspect
 @Order(1)
 @Component
-public class DataSourceAspect {
+public class DataSourcesAspect {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Pointcut("@annotation(DataSourceAop) || @within(DataSourceAop)")
+    @Pointcut("@annotation(com.ljw.crawler.datasource.DataSourcesAop) || @within(com.ljw.crawler.datasource.DataSourcesAop)")
     public void dsPointCut()
     {
 
@@ -30,30 +30,30 @@ public class DataSourceAspect {
     @Around("dsPointCut()")
     public Object around(ProceedingJoinPoint point) throws Throwable
     {
-        com.ljw.crawler.datasource.DataSourceAop dataSourceAop = getDataSource(point);
+        DataSourcesAop dataSourcesAop = getDataSource(point);
 
-        if (null != dataSourceAop) {
-            com.ljw.crawler.datasource.DataSourceContextHolder.setDataSourceType(dataSourceAop.value());
+        if (null != dataSourcesAop) {
+            DataSourcesContextHolder.setDataSourceType(dataSourcesAop.value());
         }
         try {
             return point.proceed();
         } finally {
             // 销毁数据源 在执行方法之后
-            com.ljw.crawler.datasource.DataSourceContextHolder.cleanDataSourceType();
+            DataSourcesContextHolder.cleanDataSourceType();
         }
     }
 
     /**
      * 获取需要切换的数据源
      */
-    public com.ljw.crawler.datasource.DataSourceAop getDataSource(ProceedingJoinPoint point)
+    public DataSourcesAop getDataSource(ProceedingJoinPoint point)
     {
         MethodSignature signature = (MethodSignature) point.getSignature();
-        com.ljw.crawler.datasource.DataSourceAop dataSourceAop = AnnotationUtils.findAnnotation(signature.getMethod(), com.ljw.crawler.datasource.DataSourceAop.class);
-        if (Objects.nonNull(dataSourceAop)) {
-            return dataSourceAop;
+        DataSourcesAop dataSourcesAop = AnnotationUtils.findAnnotation(signature.getMethod(), DataSourcesAop.class);
+        if (Objects.nonNull(dataSourcesAop)) {
+            return dataSourcesAop;
         }
-        return AnnotationUtils.findAnnotation(signature.getDeclaringType(), com.ljw.crawler.datasource.DataSourceAop.class);
+        return AnnotationUtils.findAnnotation(signature.getDeclaringType(), DataSourcesAop.class);
     }
 
 }
