@@ -1,7 +1,6 @@
 package com.ljw.crawler.datasource;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +10,6 @@ import java.util.List;
  * @Description: 读取配置文件的数据源信息
  * @Date: Created in 2020/9/9 13:52
  */
-@Component
 @ConfigurationProperties(prefix = "datasources")
 public class DataSourcesProperties {
 

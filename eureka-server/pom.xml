@@ -10,9 +10,9 @@
 
 
 	<groupId>com.ljw.crawler</groupId>
-	<artifactId>server-center</artifactId>
+	<artifactId>eureka-server</artifactId>
 	<version>1.0.0</version>
-	<name>server-center</name>
+	<name>eureka-server</name>
 	<description>Service Registry Center project for Spring Boot</description>
 
 

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: server-center
+    name: eureka-server
   security:
     user:
       name: eureka

@@ -1,0 +1,28 @@
+
+spring:
+  application:
+    name: admin-server
+
+server:
+  port: 8666
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:123456@localhost:8701/eureka/
+  instance:
+    # 更改服务名
+    instance-id: ${spring.application.name}${server.port}
+    # 显示服务IP地址
+    prefer-ip-address: true
+debug: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

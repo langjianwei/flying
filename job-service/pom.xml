@@ -41,6 +41,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.ljw.crawler</groupId>
 			<artifactId>common-service</artifactId>
 			<version>1.0.0</version>

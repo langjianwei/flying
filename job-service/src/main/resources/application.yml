@@ -6,7 +6,6 @@ server:
   port: 8702
 
 
-
 ### 数据源信息相关配置，多数据源支持，直接在最下面添加即可
 datasources:
   default-db: default-db
@@ -35,3 +34,12 @@ eureka:
     # 显示服务IP地址
     prefer-ip-address: true
 debug: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
