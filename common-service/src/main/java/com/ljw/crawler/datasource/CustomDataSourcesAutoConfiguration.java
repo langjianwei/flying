@@ -6,10 +6,10 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
@@ -18,8 +18,8 @@ import java.util.List;
 import java.util.Map;
 
 @EnableConfigurationProperties(value = DataSourcesProperties.class)
-@ConditionalOnProperty(prefix = "datasources", name = {"default-db", "list"} , matchIfMissing = true)
-@Configuration
+@ConditionalOnClass(DynamicDataSources.class)
+@ConditionalOnProperty(prefix = "datasources", name = {"default-db"}, havingValue = "default-db")
 public class CustomDataSourcesAutoConfiguration {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());

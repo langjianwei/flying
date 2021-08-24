@@ -20,7 +20,7 @@ public class JobServiceWynImpl implements JobService {
         return "wyn";
     }
 
-    @DataSourcesAop(value = "db-wyn")
+    @DataSourcesAop(value = "default-db")
     public List<Skus> getSkus(){
         return jobMapper.getSkus();
     }

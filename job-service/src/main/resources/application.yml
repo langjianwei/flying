@@ -9,9 +9,9 @@ server:
 
 ### 数据源信息相关配置，多数据源支持，直接在最下面添加即可
 datasources:
-  default-db: db-wyn
+  default-db: default-db
   list:
-    - dataSourceName: db-wyn
+    - dataSourceName: default-db
       enable: true
       driver-class-name: org.postgresql.Driver
       url: jdbc:postgresql://192.168.3.52:5432/hotel_v3_prd_wyn_test
