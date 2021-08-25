@@ -3,7 +3,7 @@ spring:
     name: job-service
 
 server:
-  port: 8702
+  port: 8703
 
 
 ### 数据源信息相关配置，多数据源支持，直接在最下面添加即可
