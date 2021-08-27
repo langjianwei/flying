@@ -2,11 +2,13 @@
 一个分布的、异步的爬虫抓取平台
 
 ### 背景
+
 * 学习的总结和技术的提升
 * 项目平台化
 * 业务解耦
 
 ### 系统模块
+
 ```javascript
 com.ljw.crawler
     |--- admin-server            // 服务监控
@@ -19,9 +21,11 @@ com.ljw.crawler
 
 
 ### 架构设计图
+![pic](http://processon.com/chart_image/6128a0fce401fd1fb692ee63.png)
 
 
 ### 问题反馈
+
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
 
 * 邮件(17600604700@163.com)
